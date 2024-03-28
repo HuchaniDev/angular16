@@ -1,0 +1,50 @@
+<div class="p-2 flex justify-center bg-teal-500">
+    <p class="text-teal-100 font-semibold text-2xl">Listado de Heroes</p>
+</div>
+
+<div *ngIf="deletedHero; else notthingWasDeleted">
+    <h1 class="m-2">Héroe borrado: <small class="text-red-700">{{ deletedHero }}</small></h1>
+</div>
+
+<ng-template #notthingWasDeleted >
+    <h1 class="m-2">No ha borrado nada</h1>
+</ng-template>
+
+
+<button 
+    *ngIf="heroNames.length>0"
+    (click)="removeLastHero()"
+    class="bg-red-500 m-2 rounded-md px-3 py-1 font-semibold border-red-600 border-[2px] hover:bg-orange-300">
+    
+    <p class="text-[15px] text-white">Borrar ultimo heroe</p>
+</button>
+
+<button 
+    (click)="reset()"
+    class="bg-white m-2 rounded-md px-3 py-1 font-semibold border-sky-600 border-[2px] hover:bg-sky-400 w-32 ">
+    <p class="text-[15px] text-black hover:text-white">Recet</p>
+</button>
+
+
+<!-- <ul *ngIf="heroNames.length>0" class="m-2 rounded-lg p-1 border-cyan-700 border-[1px] divide-y"> -->
+<ul *ngIf="heroNames.length>0" class="m-2 rounded-lg p-1 border-cyan-700 border-[1px]">
+
+    <li
+    *ngFor="let name of heroNames; let i = index">
+    <!-- <div class="grid grid-cols-2"> -->
+    <div class="flex gap-2 items-center">
+        
+        <span class="flex justify-center items-center bg-teal-600 rounded-full w-7 h-6"><b>{{ i+1 }}</b></span>
+        <h1 class=" bg-teal-100 rounded my-1 w-full">{{ name }}  </h1>
+        <button (click)="editar(i)" class=" bg-sky-300 border-sky-600 border-[2px] rounded px-3 hover:bg-sky-600 hover:text-white font-semibold"> edit </button>
+        <button (click)="borrar(i)" class="text-red-800 bg-rose-300 border-red-600 border-[2px] rounded px-3 hover:bg-red-600 hover:text-white font-semibold"> delete </button>
+        
+    </div>
+    </li>
+</ul>
+    
+
+<div *ngIf="editId!=null">
+    <input [(ngModel)] ="newName" class="m-2 px-1 rounded border-teal-800 border-[2px]" value=" {{ newName }}" type="text" placeholder="edit">
+    <button (click)="save()" class="bg-teal-400 rounded border-teal-800 border-[2px] w-28 hover:bg-teal-600 hover:text-white font-semibold ">save</button>
+</div>

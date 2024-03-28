@@ -1,0 +1,47 @@
+<h1 class="flex justify-center font-bold text-xl text-red-800">
+    {{ name }}
+</h1>
+
+<div class="p-5">
+
+    <div class="border-2 border-green-800 rounded-[15px] p-2">
+        
+        <div class="flex  bg-green-100 rounded-md ">
+            <p>Nombre:</p>
+            <p>{{ name }}</p>
+        </div>
+        
+        <td>Edad:</td>
+        <dd>{{ age }}</dd>
+        
+        <td>description:</td>
+        <dd>{{ getDescription() }}</dd>
+        
+        <td>Capitalizado:</td>
+        <dd>{{ capitalizeName }}</dd>
+        
+    </div>
+
+</div>
+<div class="p-5">
+    <input [(ngModel)]="name" type="text" value="{{ name }}" class="bg-indigo-50 border-red-800" placeholder="name hero">
+
+</div>
+
+<div class="flex justify-center space-x-4">
+    <button
+        *ngIf="name!='spiderMan'"
+        (click)="chagehero()" class="bg-green-600 m-2 p-1 rounded-md hover:bg-green-900"> cambiar nombre
+    </button>
+    
+    <button
+     *ngIf="age !=50" 
+    (click)="changeAge()" class="bg-green-600 m-2 p-1 rounded-md hover:bg-green-900"> cambiar edad
+    </button>
+
+
+    <button
+        (click)="reset()" class="bg-green-600 m-2 p-1 rounded-md hover:bg-red-700"> Reset
+    </button>
+</div>
+
