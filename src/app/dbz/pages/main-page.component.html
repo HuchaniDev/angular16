@@ -1,3 +1,17 @@
-<h1>
-    bdz works!
-</h1>
+<div class=" flex justify-center items-center bg-sky-500 p-3 mb-1 text-white font-semibold">
+    <h1>
+        bdz Personajes!
+    </h1>
+</div>
+<hr>
+
+<div class="flex justify-center">
+
+    <div class="md:grid grid-cols-2 md:w-[1000px] w-full">
+        <dbz-list   [characterList]="characters"
+                    (onDelete)="onDeleteCharacter($event)"></dbz-list>
+
+
+        <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    </div>
+</div>

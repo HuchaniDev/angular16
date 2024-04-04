@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*iconos
+npm install @fortawesome/fontawesome-free
+
+----iconos----
+<i class="heroicon-o-heart mr-2"></i>
+
+<i class="heroicon-o-lightning-bolt mr-2"></i>
+<i class="heroicon-o-check-circle mr-2"></i>
+<i class="heroicon-o-globe mr-2"></i>
+<i class="heroicon-o-user mr-2"></i>
+<i class="fas fa-heart mr-2"></i>
+<i class="fas fa-star mr-2"></i>
+<i class="fas fa-check-circle mr-2"></i>
+<i class="fas fa-globe mr-2"></i>
+<i class="fas fa-user mr-2"></i>
+<i class="fas fa-trash-alt"></i>
+
+
+
+*/
+@import '~@fortawesome/fontawesome-free/css/all.css';

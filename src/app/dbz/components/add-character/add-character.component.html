@@ -1,0 +1,36 @@
+<div class="m-2">
+    <h1 class="font-semibold pl-3 text-[25px]">Agregar personaje</h1>
+    <div class="border-gray-400 border-[1px] rounded p-4 flex items-center w-[100%]">
+        <form class="space-y-4 w-[100%]" (ngSubmit)="emitCharacter()">
+            <div>
+
+                <input 
+                class="w-[100%] p-1 focus:border-sky-500 focus:outline-none border-slate-200 border-[2px] rounded-[15px] caret-sky-500"
+                type="text" 
+                placeholder="Nombre"
+                [(ngModel)]="character.name"
+                name="name">
+
+            </div>
+            <div>
+
+                <input
+                class="w-[100%] p-1 focus:border-sky-500 focus:outline-none border-slate-200 border-[2px] rounded-[15px]"
+                type="number" 
+                placeholder="Poder"
+                [(ngModel)]="character.power"
+                name="power">
+                
+            </div>
+            <div>
+
+                <button
+                class="border-teal-500 border-[2px] rounded-md px-2 w-[100%] hover:bg-teal-500 hover:font-semibold" 
+                type="submit">Agregar</button>
+
+            </div>
+            <!-- <pre>{{ character | json }}</pre> -->
+        </form>
+        
+    </div>
+</div>

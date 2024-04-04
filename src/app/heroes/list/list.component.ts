@@ -13,12 +13,18 @@ import { Component } from '@angular/core';
   public editId:number |null=null;
   public newName:string='';
 
+  public name:string='';
+
   removeLastHero():void{
     this.deletedHero=this.heroNames.pop()
   }
   reset():void{
     this.heroNames = ['Spiderman','Ironman','Hulk','She Hulk','Thor'];
     this.deletedHero;
+  }
+
+  create():void{
+
   }
 
   editar(id:number):void{

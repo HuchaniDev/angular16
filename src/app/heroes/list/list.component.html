@@ -22,8 +22,23 @@
 <button 
     (click)="reset()"
     class="bg-white m-2 rounded-md px-3 py-1 font-semibold border-sky-600 border-[2px] hover:bg-sky-400 w-32 ">
-    <p class="text-[15px] text-black hover:text-white">Recet</p>
+    <p class="text-[15px] text-black">Recet</p>
 </button>
+
+<button 
+    (click)="create()"
+    class="border-teal-800 border-[2px] rounded-md  w-32 m-2 py-1 hover:bg-teal-300">
+    <p class="text-[15px] text-black font-semibold ">Crear</p>
+</button>
+
+<div
+    class="m-2 bg-teal-100 rounded border-[2px] border-teal-800">
+    <div *ngIf="true"
+        class="flex item-end">
+        <input [(ngModel)] ="newName" class="m-2 px-1 rounded border-teal-800 border-[2px]" value=" {{ newName }}" type="text" placeholder="edit">
+        <button (click)="save()" class= " bg-teal-400 rounded border-teal-800 border-[2px] w-28 hover:bg-teal-600 hover:text-white font-semibold ">save</button>
+    </div>
+</div>
 
 
 <!-- <ul *ngIf="heroNames.length>0" class="m-2 rounded-lg p-1 border-cyan-700 border-[1px] divide-y"> -->

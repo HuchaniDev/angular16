@@ -1,0 +1,48 @@
+
+<div class="m-2">
+    <h1 class="font-semibold pl-3 text-[25px]">Listado</h1>
+    <div class="border-gray-600 border-[1px] rounded p-4 w-[100%]">
+        <ul
+        *ngIf="characterList.length>0; else mensaje"  
+        class="grid gap-2">
+            <li
+                *ngFor="let character of characterList;
+                let i =index;
+                let isEven = even;
+                let isOdd = odd;
+                "
+                
+                >
+                <div class="flex item-center ">
+                        <span class="text-white rounded-full w-6 h-6 mx-2 flex justify-center items-center"
+                        [ngClass]="{
+                            'bg-sky-400 ':isEven,
+                            'bg-sky-800 ':isOdd
+
+                        }">
+                        {{ i+1 }}</span>
+
+                    <div class=" bg-sky-200 rounded-full px-2 w-full">
+                        <span>{{ character.name }}-</span>
+                        <strong>Power: </strong>
+                        <span>{{ character.power }}</span>
+                    </div>
+                    <div class="bg-cyan-500 rounded w-10 h-6 flex items-center justify-center hover:bg-red-600 transition-all mx-2">
+                        <div class="font-extrabold text-red-600 border-pink-800 hover:text-white">
+                            <button (click)="onDeleteCharacter(character.id)"><i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+
+        <ng-template #mensaje>
+            <div  class="bg-sky-500 flex justify-center rounded">
+                <h1 class="font-bold"> No hay personajes</h1>
+            </div>
+        </ng-template>
+    </div>
+</div>
